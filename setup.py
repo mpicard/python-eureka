@@ -1,29 +1,25 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-"""The setup script."""
-
 from setuptools import setup, find_packages
 
-with open('README.rst') as readme_file:
-    readme = readme_file.read()
 
-with open('HISTORY.rst') as history_file:
-    history = history_file.read()
+with open('README.rst') as f:
+    readme = f.read()
 
-requirements = [
-    'Click>=6.0',
-    # TODO: put package requirements here
-]
+with open('HISTORY.rst') as f:
+    history = f.read()
+
+with open('requirements.txt') as f:
+    install_requirements = f.read()
 
 setup_requirements = [
     'pytest-runner',
-    # TODO(mpicard): put setup requirements (distutils extensions, etc.) here
 ]
 
 test_requirements = [
     'pytest',
-    # TODO: put package test requirements here
+    'pytest-cov',
+    'pytest-watch'
 ]
 
 setup(
@@ -34,17 +30,17 @@ setup(
     author="Martin Picard",
     author_email='martin.picard@emc.com',
     url='https://github.com/mpicard/python_eureka_client',
-    packages=find_packages(include=['python_eureka_client']),
+    packages=find_packages(include=['eureka_client']),
     entry_points={
         'console_scripts': [
-            'python_eureka_client=python_eureka_client.cli:main'
+            'eureka=eureka_client.cli:main'
         ]
     },
     include_package_data=True,
-    install_requires=requirements,
+    install_requires=install_requirements,
     license="MIT license",
     zip_safe=False,
-    keywords='python_eureka_client',
+    keywords='',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',

@@ -1,4 +1,4 @@
-* Python Eureka Client version:
+* Eureka Client version:
 * Python version:
 * Operating System:
 

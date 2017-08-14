@@ -1,0 +1,4 @@
+cli:
+  build: .
+  command: pytest
+  image: eureka_client
