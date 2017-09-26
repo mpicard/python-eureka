@@ -1,0 +1,5 @@
+--index-url https://pypi.python.org/simple/
+
+requests==2.18.3
+ec2-metadata==1.1.0
+dnspython==1.15.0

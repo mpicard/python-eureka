@@ -1,4 +1,16 @@
-cli:
-  build: .
-  command: pytest
-  image: eureka_client
+version: '3'
+
+services:
+
+  py:
+    build: .
+    command: ptw
+    volumes:
+      - .:/code
+    depends_on:
+      - eureka
+
+  eureka:
+    image: netflixoss/eureka:1.3.1
+    ports:
+      - "8080:8080"

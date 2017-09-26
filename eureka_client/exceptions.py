@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-"""
-Copyright 2017 Martin Picard
-MIT License
-"""
+# Copyright 2017 Martin Picard
+# MIT License
 
 
 class EurekaClientException(Exception):
@@ -25,5 +23,5 @@ class FetchFailed(EurekaClientException):
     pass
 
 
-class ConfigurationException(EurekaClientException):
+class ClientConfigurationException(EurekaClientException):
     pass

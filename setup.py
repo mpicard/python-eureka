@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 
 with open('README.rst') as f:
@@ -10,20 +10,10 @@ with open('HISTORY.rst') as f:
     history = f.read()
 
 with open('requirements.txt') as f:
-    install_requirements = f.read()
-
-setup_requirements = [
-    'pytest-runner',
-]
-
-test_requirements = [
-    'pytest',
-    'pytest-cov',
-    'pytest-watch'
-]
+    requirements = f.read().splitlines()
 
 setup(
-    name='python_eureka_client',
+    name='eureka_client',
     version='0.0.1',
     description="Python based client for Netflix Eureka",
     long_description=readme + '\n\n' + history,
@@ -31,13 +21,8 @@ setup(
     author_email='martin.picard@emc.com',
     url='https://github.com/mpicard/python_eureka_client',
     packages=find_packages(include=['eureka_client']),
-    entry_points={
-        'console_scripts': [
-            'eureka=eureka_client.cli:main'
-        ]
-    },
     include_package_data=True,
-    install_requires=install_requirements,
+    install_requires=requirements[2:],
     license="MIT license",
     zip_safe=False,
     keywords='',
@@ -54,6 +39,5 @@ setup(
         'Programming Language :: Python :: 3.5',
     ],
     test_suite='tests',
-    tests_require=test_requirements,
-    setup_requires=setup_requirements,
+    setup_requires=['pytest-runner'],
 )

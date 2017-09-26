@@ -43,15 +43,14 @@ clean-pyc: ## remove Python file artifacts
 	find . -name '__pycache__' -exec rm -fr {} +
 
 clean-test: ## remove test and coverage artifacts
-	rm -fr .tox/
 	rm -f .coverage
 	rm -fr htmlcov/
 
 lint: ## check style with flake8
 	flake8 eureka_client tests
 
-test: ## run tests quickly with the default Python
-	py.test
+test: ## run tests using compose
+	docker-compose run py ptw
 
 coverage: ## check code coverage quickly with the default Python
 	coverage run --source eureka_client -m pytest
