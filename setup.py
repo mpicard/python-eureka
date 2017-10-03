@@ -13,7 +13,7 @@ with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
 setup(
-    name='eureka_client',
+    name='python-eureka-client',
     version='0.0.1',
     description="Python based client for Netflix Eureka",
     long_description=readme + '\n\n' + history,
